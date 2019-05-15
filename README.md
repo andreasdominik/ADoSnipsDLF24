@@ -1,7 +1,7 @@
-# ADoSnipsTemplate
+# ADoSnipsDLF24
 
-This is a template skill for the SnipsHermesQnD framework for Snips.ai
-written in Julia.
+This is a skill for the SnipsHermesQnD framework for Snips.ai
+to read news from the DLF24 news-feed.
 
  The full documentation is just work-in-progress!
  Current version can be visited here:
