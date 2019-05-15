@@ -16,36 +16,11 @@ const LANG = (lang != nothing) ? lang : "de"
 const CONTINUE_WO_HOTWORD = true
 const DEVELOPER_NAME = "andreasdominik"
 
+# Scripts for DLF24 access:
+#
+DOWNLOAD_SCRIPT = "$MODULE_DIR/dlf24.sh"
+DOWNLOAD_FULL_SCRIPT = "$MODULE_DIR/dlf24full.sh"
 
-# Slots:
-# Name of slots to be extracted from intents:
-#
-const SLOT_WORD = "a_word"
+DOWNLOAD_FILE = "dlf.json"
 
-# name of entry in config.ini:
-#
-const INI_MY_NAME = "my_name"
-
-#
-# link between actions and intents:
-# intent is linked to action{Funktion}
-# the action is only matched, if
-#   * intentname matches and
-#   * if the siteId matches, if site is  defined in config.ini
-#     (such as: "switch TV in room abc").
-#
-# Language-dependent settings:
-#
-if LANG == "de"
-    Snips.registerIntentAction("pleaseRepeatDE", DEVELOPER_NAME,
-                                @__MODULE__, templateAction)
-    TEXTS = TEXTS_DE
-elseif LANG == "en"
-    Snips.registerIntentAction("pleaseRepeatEN", DEVELOPER_NAME,
-                                @__MODULE__, templateAction)
-    TEXTS = TEXTS_EN
-else
-    Snips.registerIntentAction("pleaseRepeatEN", DEVELOPER_NAME,
-                                @__MODULE__, templateAction)
-    TEXTS = TEXTS_EN
-end
+Snips.registerIntentAction("ReadDLFnews", readNews)

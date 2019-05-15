@@ -4,14 +4,11 @@
 # Normally, it is NOT necessary to change anything in this file,
 # unless you know what you are doing!
 #
-module ADoSnipsTemplate
+module ADoSnipsDLF24
 
 const MODULE_DIR = @__DIR__
 const APP_DIR = replace(MODULE_DIR, r"/[^/]*/?$"=>"")
 const SKILLS_DIR = replace(APP_DIR, r"/[^/]*/?$"=>"")
-# const MODULE_DIR = dirname(Base.source_path())
-# const APP_DIR = "$MODULE_DIR/.."
-# include("$APP_DIR/SnipsHermesQnD/src/SnipsHermesQnD.jl")
 const FRAMEWORK_DIR = "$SKILLS_DIR/ADoSnipsQnD"
 include("$FRAMEWORK_DIR/SnipsHermesQnD/src/SnipsHermesQnD.jl")
 import .SnipsHermesQnD
