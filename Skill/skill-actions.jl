@@ -26,10 +26,8 @@ function readNews(topic, payload)
     end
 
     Snips.publishSay("""Ich rufe die neuesten Nachrichten von DLF ab!
-                     Nach jeder Zusammenfassung kannst Du JA sagen,
-                     um die vollständige Meldung zu hören oder Abbruch
-                     oder Ende um
-                     die Nachrichten zu beenden.""",
+                     Nach jeder Zusammenfassung kannst Du Ende oder Abbruch
+                     sagen, um die Nachrichten zu beenden.""",
                      lang = "de", wait = true)
 
     news = Snips.tryParseJSONfile("dlf.json")
@@ -46,15 +44,15 @@ function readNews(topic, payload)
         Snips.publishSay(one[:title], lang = "de")
         Snips.publishSay(one[:description], lang = "de")
 
-        answer = Snips.askYesOrNoOrUnknown("")
-        if answer == :yes
-            Snips.publishSay("Die vollständige Meldung:", lang = "de")
-            text = Snips.tryReadTextfile("dlf_$i.txt")
-            length(text) > 0 && Snips.publishSay(text, lang = "de")
-        elseif answer == :no
-            Snips.publishSay("OK. Abbruch!", lang = "de")
-            break
-        end
+        # answer = Snips.askYesOrNoOrUnknown("")
+        # if answer == :yes
+        #     Snips.publishSay("Die vollständige Meldung:", lang = "de")
+        #     text = Snips.tryReadTextfile("dlf_$i.txt")
+        #     length(text) > 0 && Snips.publishSay(text, lang = "de")
+        # elseif answer == :no
+        #     Snips.publishSay("OK. Abbruch!", lang = "de")
+        #     break
+        # end
 
         if Snips.askYesOrNoOrUnknown("") == :no
             Snips.publishSay("OK. Abbruch!", lang = "de")
