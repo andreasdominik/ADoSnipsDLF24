@@ -18,7 +18,7 @@ function readNews(topic, payload)
 """
 function readNews(topic, payload)
 
-    println("- ADoSnipsDLFnews: action readNews() started.")
+    Snips.printLog("action readNews() started.")
 
     if ! Snips.tryrun(`$DOWNLOAD_SCRIPT`, wait = false, errorMsg = "")
         Snips.publishEndSession("Ich kann die Nachrichten nicht von DLF24 abrufen!")
