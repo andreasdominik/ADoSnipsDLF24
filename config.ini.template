@@ -1,5 +1,4 @@
 [global]
 language=de
 ReadDLFnews:must_include:simple=(Nachrichten|Neues|Neuigkeiten)
-
 [secret]
