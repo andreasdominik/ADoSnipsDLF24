@@ -1,0 +1,27 @@
+# Intent definition for Lights skill
+#
+#  (c) A. Dominik, 2020
+#
+skill = "ADoSnipsDLF24DE"
+developer = "andreasdominik"
+
+
+[inventory]
+intents = ["ReadDLFnews"]
+slots = []
+
+
+# define slots:
+# Types: Any/ListOfValues/InstantTime/Currency/Number/Ordinal/...
+#
+
+
+# define phrases for intent recognition:
+# exact, regex, part
+#
+[ReadDLFnews]
+disable_on_start = false
+easy = "ordered:<<lese|lies|sage|sag|was sind>> <<die neuen|neue|aktuellen?|neuesten?>> <<Nachrichten|News|Neuigkeiten>>"
+dlf = "ordered: <<DLF|DLF 24|DLF24|Deutschlandfunk>> Nachrichten"
+dlf2 = "ordered: Nachrichten <<DLF|DLF24|DLF 24|Deutschlandfunk>>"
+read = "partial: Nachrichten <<vorlesen|sagen>>"
