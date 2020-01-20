@@ -28,17 +28,19 @@ function readNews(topic, payload)
     Snips.publishSay("""Ich rufe die neuesten Nachrichten von DLF ab!
                      Nach jeder Zusammenfassung kannst Du Ende oder Abbruch
                      sagen, um die Nachrichten zu beenden.""",
-                     lang = "de", wait = true)
+                     lang = "de", wait = false)
 
+    printDebug("vor readJSON")
     news = Snips.tryParseJSONfile("dlf.json")
 
+    printDebug("news: $news")
     for i in 1:length(news)
 
         one = news[Symbol(i)]
 
         # prepare full text:
-        shell = `$DOWNLOAD_FULL_SCRIPT $i $(one[:link])`
-        Snips.tryrun(shell, wait = false)
+        # shell = `$DOWNLOAD_FULL_SCRIPT $i $(one[:link])`
+        # Snips.tryrun(shell, wait = false)
 
         #Snips.publishSay(one[:date])
         Snips.publishSay(one[:title], lang = "de")
