@@ -30,10 +30,8 @@ function readNews(topic, payload)
                      sagen, um die Nachrichten zu beenden.""",
                      lang = "de", wait = true)
 
-    printDebug("vor readJSON")
     news = Snips.tryParseJSONfile("dlf.json")
 
-    printDebug("news: $news")
     for i in 1:length(news)
 
         one = news[Symbol(i)]
