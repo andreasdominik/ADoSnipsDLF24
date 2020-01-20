@@ -28,7 +28,7 @@ function readNews(topic, payload)
     Snips.publishSay("""Ich rufe die neuesten Nachrichten von DLF ab!
                      Nach jeder Zusammenfassung kannst Du Ende oder Abbruch
                      sagen, um die Nachrichten zu beenden.""",
-                     lang = "de", wait = false)
+                     lang = "de", wait = true)
 
     printDebug("vor readJSON")
     news = Snips.tryParseJSONfile("dlf.json")
